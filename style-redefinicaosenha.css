@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url(fundooriginal.jpg) center / cover no-repeat fixed;
+    display: flex;
+    
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.126);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 40px 0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    margin-left: 600px;
+    
+}
+
+fieldset {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.inputs, select, textarea {
+    margin: 20px 0;
+    padding: 12px 10px;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    height: 48px;
+    background-color: #f7f7f7;
+    font-size: 16px;
+}
+
+.inputs:focus, select:focus, textarea:focus {
+    border-color: #1b44ca;
+    background-color: #fff;
+}
+
+button {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin: 20px 0;
+    background-color: #1b44ca;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #163ea0;
+}
+
+span.requerimento {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: -15px;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: #1b44ca;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .inputs, select, textarea {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+.message {
+    display: none;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.success {
+    background-color: #4CAF50; /* Verde para sucesso */
+    color: white;
+}
+
+.error {
+    background-color: #f44336; /* Vermelho para erro */
+    color: white;
+}

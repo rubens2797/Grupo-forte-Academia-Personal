@@ -1,0 +1,150 @@
+*{margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+   font-family: 'poppins', sans-serif;
+   }
+   
+   body{
+       display: flex;
+       min-height: 100vh;
+       width: 1900px;
+       height: 1000px;
+      background-color: #2d2d2d;
+
+   } 
+   .navigation{
+     position: fixed;  
+     height: 3000px;
+     background: #424242;
+     width: 70px;
+     box-shadow: 10px 0 0 #143294;
+     border-left: 10px solid #424242;
+     overflow: hidden;
+     transition: 0.5s ;
+     z-index: 1000;
+   }
+   .navigation:hover{
+       width: 300px; ;
+       
+     }
+   .navigation ul{
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       padding-left: 5px;
+       padding-top: 40px;
+   }
+   .navigation ul li{
+       position: relative;
+       list-style: none;
+       width: 100%;
+       border-top-left-radius: 20px;
+       border-bottom-left-radius: 20px;
+   }
+   .navigation ul li a{
+       position: relative;
+       display: flex;
+       width: 100px;
+       text-decoration: none;
+       color: #fff;
+   }
+   .navigation ul li a .icon{
+       position: relative;
+       display: block;
+       min-width: 60px;
+       height: 60px;
+       text-align: center;
+       line-height: 70px;
+       font-size: 1.5rem;
+       z-index: 1;
+   }
+   .navigation ul li a .icon ion-ion{
+       position: relative;
+      font-size: 1.5rem;
+      z-index: 1;
+   }
+   .navigation ul li a .title{
+       position: relative;
+       display: block;
+       padding-left: 10px;
+       height: 60px;
+       line-height: 60px;
+       white-space: nowrap;
+   }
+   .navigation ul li.active{
+       background: #143294;
+       
+   }
+   .navigation ul li.active a::before{
+       content: '';
+       position: absolute;
+       top: -30px;
+       right: 0;
+       width: 30px;
+       background-color: #424242;
+       border-radius:  50%;
+       box-shadow: 15px 15px 0 #143294;
+   }
+   .navigation ul li.active a::after{
+       content: '';
+       position: absolute;
+       bottom: -30px;
+       right: 0;
+       width: 30px;
+       background-color: #424242;
+       border-radius:  50%;
+       box-shadow: 15px -15px 0 #143294;
+   }
+
+   .duvidas{
+   
+    margin-top: 100px;
+    cursor: pointer;
+    width: 1000px;
+    height: 900px;
+    margin-left: 100px;
+    color: white;
+   }
+ 
+   details{
+    padding: 10px;
+    
+   }
+
+   details li{
+    margin-left: 35px;
+    margin-top: 5px;
+   }
+
+
+
+   .duvidas details p{
+    text-align: justify;
+    padding: 20px;
+    
+
+    
+   }
+   .duvidas details summary{
+    background-color: #143294;
+    padding: 2%;
+    border-bottom: 2x solid #2d2d2d;
+    font-weight: 600;
+    
+   }
+
+   .duvidas h1{
+    padding-left: 30px;
+   }
+  
+
+   .conteiner{
+    width: 1400px;
+    height:1500px;
+    margin-left: 340px;
+}
+    
+   
+
+

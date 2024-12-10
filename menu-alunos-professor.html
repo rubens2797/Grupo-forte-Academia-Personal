@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-professor.css">
+    <link rel="stylesheet" href="ava.css"></link>
+
+    <title>Grupo Forte Academia</title>
+</head>
+<body>
+  <div class="navigation">
+    <ul>
+        <li class="list">
+            <a href="index.html">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="title">Home</span>
+            </a>
+        </li>
+
+        <li class="list active">
+            <a href="menu-alunos-professor.html">
+                <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                <span class="title">Alunos</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="mensagens-professor.html">
+                <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                <span class="title">Mensagens</span>
+            </a>
+        </li>
+        
+        <li class="list">
+            <a href="senha-professor.html">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <span class="title">Senha</span>
+            </a>
+        </li>
+
+
+        <li class="list">
+            <a href="ajuda-professor.html">
+                <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                <span class="title">Ajuda</span>
+            </a>
+        </li>
+       
+        <li class="list">
+            <a href="">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                <span class="title">Sair</span>
+            </a>
+        </li>
+    </ul>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    const list = document.querySelectorAll('.list');
+    
+    function activelink() {
+        list.forEach((item) => item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    list.forEach(item => item.addEventListener('click', activelink));
+   
+  </script>
+
+<style>
+    /* Estilo adicional para as seções */
+    .treino-section, .avaliacao {
+        background-color: #f3f3f3;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    
+    }
+
+    .treino-section h3, .avaliacao h2 {
+        margin-bottom: 10px;
+    }
+
+    .treino-section ul, .avaliacao ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .treino-section li {
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-add, .btn-edit, .btn-delete, .btn-submit {
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para os botões */
+    .buttons-container {
+        display: flex;
+        gap: 15px;
+        margin-top: 2790px;
+        margin-right: 250px;
+        
+
+    }
+
+    .btn {
+        padding: 12px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        cursor: pointer;
+        flex: 1;
+    }
+
+    .btn:hover {
+        background-color: #2980b9;
+    }
+
+    /* Estilo para exibir dados */
+   
+
+    /* Resposividade */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        button {
+            font-size: 1em;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="ficha">
+<div class="container">
+    <!-- Ficha de Avaliação -->
+    <section class="avaliacao">
+        <h2>Dados Pessoais</h2>
+        <form id="formAvaliacao">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" placeholder="Idade" required>
+            </div>
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.1" placeholder="Peso" required>
+            </div>
+            <div class="form-group">
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" name="altura" placeholder="Altura" required>
+            </div>
+
+            <div class="form-group">
+                <label>Objetivo:</label>
+                <div>
+                    <label><input type="checkbox" name="objetivo" value="ganho_muscular"> Ganho Muscular</label>
+                    <label><input type="checkbox" name="objetivo" value="perda_peso"> Perda de Peso</label>
+                    <label><input type="checkbox" name="objetivo" value="condicionamento"> Condicionamento Físico</label>
+                    <label><input type="checkbox" name="objetivo" value="flexibilidade"> Flexibilidade</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nivel_atividade">Nível de Atividade:</label>
+                <select id="nivel_atividade" name="nivel_atividade">
+                    <option value="baixo">Baixo</option>
+                    <option value="medio">Médio</option>
+                    <option value="alto">Alto</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="historico">Histórico de Treinamento:</label>
+                <textarea id="historico" name="historico" rows="4" placeholder="Descreva o histórico de treinamento do aluno (se houver)"></textarea>
+            </div>
+
+            <h3>Medidas Corporais:</h3>
+            <br>
+            <div class="form-group">
+                <label for="circunferencia_biceps_direito">Bíceps Direito (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Bíceps Direito">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_biceps_esquerdo">Bíceps Esquerdo (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Bíceps Esquerdo">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_ombro">Ombro (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Ombro">
+            </div>
+            <div class="form-group">
+                <label for="circunferencia_peito"> Peito (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Peito">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_abdômen"> Abdômen (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Abdômen">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_cintura"> Cintura (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder=" Cintura">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_glúteo">Glúteo (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Glúteo">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_coxa_direita">Coxa Direita (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Coxa Direita">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_coxa_esquerda">Coxa Esquerda (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Coxa Esquerda">
+            </div>
+
+
+            <div class="form-group">
+                <label for="circunferencia_panturrilha_direita"> Panturrilha Direita (cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Panturrilha Direita">
+            </div>
+
+            <div class="form-group">
+                <label for="circunferencia_panturrilha_esquerda">Panturrilha Esquerda(cm):</label>
+                <input type="number" id="circunferencia_biceps_direito" name="circunferencia_biceps_direito" placeholder="Panturrilha Esquerda">
+            </div>
+
+            <!-- Outros campos de medidas corporais podem ser adicionados aqui -->
+            <button type="submit" class="btn-submit">Salvar Avaliação</button>
+        </form>
+    </section>
+
+    <!-- Montagem de Treinos -->
+    <section id="treino-container">
+        <div class="treino-section" id="treinoA">
+            <h3>Treino A (Quadríceps)</h3>
+            <ul id="exerciciosA"></ul>
+            <button class="btn-add" onclick="adicionarExercicio('exerciciosA')">Adicionar Exercício</button>
+        </div>
+        <div class="treino-section" id="treinoB">
+            <h3>Treino B (Peito e Ombros)</h3>
+            <ul id="exerciciosB"></ul>
+            <button class="btn-add" onclick="adicionarExercicio('exerciciosB')">Adicionar Exercício</button>
+        </div>
+        <div class="treino-section" id="treinoC">
+            <h3>Treino C (Posteriores, Glúteo e Panturrilhas)</h3>
+            <ul1 id="exerciciosC"></ul>
+            <button class="btn-add" onclick="adicionarExercicio('exerciciosC')">Adicionar Exercício</button>
+        </div>
+        <div class="treino-section" id="treinoD">
+            <h3>Treino D (Costas, Bíceps e Tríceps)</h3>
+            <ul id="exerciciosD"></ul>
+            <button class="btn-add" onclick="adicionarExercicio('exerciciosD')">Adicionar Exercício</button>
+        </div>
+    </section>
+
+    <script>
+        function adicionarExercicio(treinoId) {
+            const ul = document.getElementById(treinoId);
+            const li = document.createElement('li');
+
+            const nomeInput = document.createElement('input');
+            nomeInput.type = 'text';
+            nomeInput.placeholder = 'Nome do Exercício';
+
+            const seriesInput = document.createElement('input');
+            seriesInput.type = 'number';
+            seriesInput.placeholder = 'Séries';
+
+            const repsInput = document.createElement('input');
+            repsInput.type = 'number';
+            repsInput.placeholder = 'Repetições';
+
+            const btnEdit = document.createElement('button');
+            btnEdit.innerText = 'Editar';
+            btnEdit.onclick = function() {
+                nomeInput.disabled = !nomeInput.disabled;
+                seriesInput.disabled = !seriesInput.disabled;
+                repsInput.disabled = !repsInput.disabled;
+            };
+
+            const btnDelete = document.createElement('button');
+            btnDelete.innerText = 'Excluir';
+            btnDelete.onclick = function() {
+                ul.removeChild(li);
+            };
+
+            li.appendChild(nomeInput);
+            li.appendChild(seriesInput);
+            li.appendChild(repsInput);
+            li.appendChild(btnEdit);
+            li.appendChild(btnDelete);
+            ul.appendChild(li);
+        }
+    </script>
+
+</section>
+
+</div>
+ <!-- Exibição da Avaliação Salva -->
+    
+ <div class="botao">
+    <!-- Botões de Enviar/Imprimir -->
+    <div class="buttons-container">
+        <button id="whatsappBtn" class="btn" onclick="enviarWhatsapp()">Enviar por WhatsApp</button>
+        <button id="emailBtn" class="btn" onclick="enviarEmail()">Enviar por E-mail</button>
+        <button id="imprimirBtn" class="btn" onclick="imprimirFicha()">Imprimir</button>
+    </div>
+</div>
+</div>
+</div>  
+<script>
+    // Função de envio de dados para WhatsApp
+    function enviarWhatsapp() {
+        const resumo = document.getElementById('resumo').innerText;
+        const mensagem = `Ficha de Avaliação do Aluno:\n\n${resumo}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(mensagem)}`, '_blank');
+    }
+
+    // Função de envio de dados para E-mail
+    function enviarEmail() {
+        const resumo = document.getElementById('resumo').innerText;
+        const mensagem = `Ficha de Avaliação do Aluno:\n\n${resumo}`;
+        const url = `mailto:email@exemplo.com?subject=Ficha de Avaliação&body=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+    }
+
+    // Função para imprimir a ficha
+    function imprimirFicha() {
+        const divResumo = document.getElementById('resumo');
+        const janela = window.open('', '', 'width=800, height=600');
+        janela.document.write(`<html><head><title>Ficha de Avaliação</title></head><body>${divResumo.innerHTML}</body></html>`);
+        janela.document.close();
+        janela.print();
+    }
+
+    // Selecionando o formulário
+    const formAvaliacao = document.getElementById('formAvaliacao');
+
+    // Evento de envio do formulário
+    formAvaliacao.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Coletar os dados do formulário
+        const nome = document.getElementById('nome').value;
+        const idade = document.getElementById('idade').value;
+        const peso = document.getElementById('peso').value;
+        const altura = document.getElementById('altura').value;
+        const objetivo = [...document.querySelectorAll('input[name="objetivo"]:checked')]
+            .map(input => input.value)
+            .join(', ');
+        const nivelAtividade = document.getElementById('nivel_atividade').value;
+        const historico = document.getElementById('historico').value;
+
+        // Exibir os dados coletados no resumo
+        const resumo = `
+            <h3>Avaliação Salva</h3>
+            <p><strong>Nome:</strong> ${nome}</p>
+            <p><strong>Idade:</strong> ${idade} anos</p>
+            <p><strong>Peso:</strong> ${peso} kg</p>
+            <p><strong>Altura:</strong> ${altura} cm</p>
+            <p><strong>Objetivo:</strong> ${objetivo}</p>
+            <p><strong>Nível de Atividade:</strong> ${nivelAtividade}</p>
+            <p><strong>Histórico de Treinamento:</strong> ${historico}</p>
+        `;
+        document.getElementById('resumo').innerHTML = resumo;
+    });
+</script>
+</body>
+</html>
